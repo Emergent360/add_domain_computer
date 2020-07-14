@@ -19,3 +19,10 @@
 
 - win_reboot:
   when: domain_state.reboot_required
+
+- name: Add empire_admin to RDU group
+  win_group_membership:
+    name: Remote Desktop Users
+    members:
+      - empire\empire_admin
+    state: present
