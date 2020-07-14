@@ -1,5 +1,12 @@
 ---
 # tasks file for add_domain_computer
+- name: Set DNS lookup addresses
+  win_dns_client:
+    adapter_names: '*'
+    ipv4_addresses:
+    - "{{ dns_ip1 }}"
+    - "{{ dns_ip2 }}"
+    
 - name: add computer to domain
   win_domain_membership:
     state: "{{ ad_computer_state }}"
