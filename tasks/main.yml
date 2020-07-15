@@ -10,7 +10,6 @@
 - name: add computer to domain
   win_domain_membership:
     state: "{{ ad_computer_state }}"
-    hostname: "{{ ad_hostname }}"
     domain_ou_path: "{{ ad_ou_path }}"
     domain_admin_user: "{{ ad_domain_username }}"
     domain_admin_password: "{{ ad_domain_password }}"
