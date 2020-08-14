@@ -13,7 +13,7 @@
     domain_ou_path: "{{ ad_ou_path }}"
     domain_admin_user: "{{ ad_domain_username }}"
     domain_admin_password: "{{ ad_domain_password }}"
-    dns_domain_name: "{{ ad_domain_name }}"
+    dns_domain_name: "{{ ad_domain_server }}"
   register: domain_state
 
 - win_reboot:
