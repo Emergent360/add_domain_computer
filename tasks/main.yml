@@ -9,6 +9,7 @@
     
 - name: add computer to domain
   win_domain_membership:
+    name: "{{ inventory_hostname }}"
     state: "{{ ad_computer_state }}"
     domain_ou_path: "{{ ad_ou_path }}"
     domain_admin_user: "{{ ad_domain_username }}"
