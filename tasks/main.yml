@@ -1,9 +1,9 @@
 ---
 # tasks file for add_domain_computer
-- name: Set windows hostname
-  set_fact:
-    windows_hostname: "{{ inventory_hostname | regex_replace('(^.*)\\.ec2\\.internal$', 
-    '\\1') }}"
+#- name: Set windows hostname
+#  set_fact:
+#    windows_hostname: "{{ inventory_hostname | regex_replace('(^.*)\\.ec2\\.internal$', 
+#    '\\1') }}"
 
 - name: Set DNS lookup addresses
   win_dns_client:
@@ -14,7 +14,7 @@
     
 - name: add computer to domain
   win_domain_membership:
-    hostname: "{{ windows_hostname }}"
+#    hostname: "{{ windows_hostname }}"
     state: "{{ ad_computer_state }}"
     domain_ou_path: "{{ ad_ou_path }}"
     domain_admin_user: "{{ ad_domain_username }}"
