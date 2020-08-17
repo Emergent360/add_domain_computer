@@ -2,7 +2,7 @@
 # tasks file for add_domain_computer
 - name: Set windows hostname
   set_fact:
-    windows_hostname: "{{ inventory_hostname | regex_replace('(^.*).ec2.internal$', 
+    windows_hostname: "{{ inventory_hostname | regex_replace('(^.*)\.ec2\.internal$', 
     '\\1') }}"
 
 - name: Set DNS lookup addresses
