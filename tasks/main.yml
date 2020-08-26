@@ -11,7 +11,7 @@
     ipv4_addresses:
     - "{{ dns_ip1 }}"
     - "{{ dns_ip2 }}"
-    
+
 - name: add computer to domain
   win_domain_membership:
 #    hostname: "{{ windows_hostname }}"
